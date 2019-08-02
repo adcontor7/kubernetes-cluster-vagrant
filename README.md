@@ -24,4 +24,8 @@ $ vagrant ssh node-1
 $ vagrant ssh node-2
 ``` 
 
+## DEPLOY DEVOPS TOOLS
 
+```
+$ ansible-playbook devops-tools/playbook.yml -i inventory
+```

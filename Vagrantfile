@@ -35,6 +35,19 @@ Vagrant.configure("2") do |config|
                   node_ip: "192.250.50.#{i + 10}",
               }
           end
+
+          # Only execute once the Ansible provisioner,
+          # when all the machines are up and ready.
+          #if i == N
+          #  machine.vm.provision :ansible do |ansible|
+          #      # Disable default limit to connect to all the machines
+          #      ansible.limit = "all"
+          #      ansible.playbook = "devops-tools/playbook.yml"
+          #      ansible.groups = {
+          #        "app_servers" => ["k8s-master"],
+          #      }
+          #    end
+          #  end
       end
   end
 end
