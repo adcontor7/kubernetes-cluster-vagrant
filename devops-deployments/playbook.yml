@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Create Kubernetes namespace devops-deployments
+      become: false
+      command: kubectl create namespace devops-deployments
+      ignore_errors: yes
+
+    - name: Deploy nexus server on Kubernetes cluster
+      command: kubectl apply -f https://raw.githubusercontent.com/adcontor7/kubernetes-cluster-vagrant/master/devops-deployments/nexus-deployment.yml
+
+
+
+
+
+ #Setup a handler for checking Docker daemon using the below code.
+  handlers:
+    - name: docker status
+      service: name=docker state=started

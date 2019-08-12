@@ -29,3 +29,7 @@ $ vagrant ssh node-2
 ```
 $ ansible-playbook devops-tools/playbook.yml -i inventory
 ```
+
+## Deploy Kubernetes dashboard
+
+https://github.com/kubernetes/dashboard
