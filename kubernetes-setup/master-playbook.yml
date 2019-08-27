@@ -106,9 +106,13 @@
      #sudo cp /etc/kubernetes/admin.conf $HOME/ && sudo chown $(id -u):$(id -g) $HOME/admin.conf && export KUBECONFIG=$HOME/admin.conf
 
 #Setup the container networking provider and the network policy engine using the below code.
+  - name: Install etcd instance
+    become: false
+    command: kubectl apply -f https://docs.projectcalico.org/v3.5/getting-started/kubernetes/installation/hosted/etcd.yaml
+
   - name: Install calico pod network
     become: false
-    command: kubectl apply -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml
+    command: kubectl apply -f https://docs.projectcalico.org/v3.5/getting-started/kubernetes/installation/hosted/calico.yaml
 
 
 #Generate kube join command for joining the node to the Kubernetes cluster and store the command in the file named join-command.
