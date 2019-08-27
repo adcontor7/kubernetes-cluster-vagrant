@@ -13,6 +13,7 @@ $ vagrant up
 
 ## Accessing master
 $ vagrant ssh k8s-master
+
 vagrant@k8s-master:~$ kubectl get nodes
 NAME         STATUS   ROLES    AGE     VERSION
 k8s-master   Ready    master   18m     v1.13.3
@@ -27,7 +28,7 @@ $ vagrant ssh node-2
 ## DEPLOY DEVOPS TOOLS
 
 ```
-$ ansible-playbook devops-tools/playbook.yml -i inventory
+$ ansible-playbook devops-deployments/playbook.yml -i inventory
 ```
 
 ## Deploy Kubernetes dashboard

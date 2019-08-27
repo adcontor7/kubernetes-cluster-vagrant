@@ -8,7 +8,7 @@ N = ENV['NUM_NODES'] || 2
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.vm.provider "virtualbox" do |v|
-      v.memory = 3072
+      v.memory = 2048
       v.cpus = 2
   end
     
